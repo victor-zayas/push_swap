@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/04/14 13:33:56 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:49:18 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "libft.h"
 
-int	ft_check_input(char **argv)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-}
-
-int	main(int argc, char **argv)
-{
+	del(lst->content);
+	free(lst);
 }

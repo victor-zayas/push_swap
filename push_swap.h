@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/06/22 11:25:18 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/06/22 13:04:12 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	ft_check_input(char **argv)
-{
-}
+# include "./libft/libft.h"
 
-int	main(int argc, char **argv)
-{
-}
+#endif

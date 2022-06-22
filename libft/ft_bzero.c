@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/03/29 07:47:57 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:44:25 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int	ft_check_input(char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-}
+	size_t	i;
 
-int	main(int argc, char **argv)
-{
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
 }

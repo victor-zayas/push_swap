@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/03/28 18:47:56 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:51:07 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int	ft_check_input(char **argv)
+void	*ft_memset(void *str, int c, size_t len)
 {
-}
+	size_t	i;
 
-int	main(int argc, char **argv)
-{
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)str)[i] = (unsigned char)c;
+		i++;
+	}
+	return ((unsigned char *)str);
 }

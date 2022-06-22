@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/04/06 17:52:17 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:52:42 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include "libft.h"
 
-int	ft_check_input(char **argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-}
+	int		i;
+	char	*result;
 
-int	main(int argc, char **argv)
-{
+	if (s == NULL)
+		return (NULL);
+	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }

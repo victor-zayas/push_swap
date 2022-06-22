@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/03/02 17:45:37 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:52:55 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int	ft_check_input(char **argv)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-}
+	size_t	i;
+	size_t	j;
 
-int	main(int argc, char **argv)
-{
+	i = 0;
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
+	{
+		j = 0;
+		while (haystack[i + j] == needle[j] && (i + j) < len)
+		{
+			if (needle[j + 1] == 0)
+				return ((char *)&haystack[i]);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

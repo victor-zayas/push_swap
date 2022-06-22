@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/03/29 11:36:51 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/05/05 20:52:49 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"push_swap.h"
+#include"libft.h"
 
-int	ft_check_input(char **argv)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-}
+	size_t			i;
+	unsigned char	*a;
+	unsigned char	*b;
 
-int	main(int argc, char **argv)
-{
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((a[i] || b[i]) && (i < n - 1))
+	{
+		if (a[i] != b[i])
+			return (a[i] - b[i]);
+		i++;
+	}
+	return (a[i] - b[i]);
 }
