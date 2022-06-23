@@ -6,16 +6,21 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:03 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/06/22 21:41:07 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-int	ft_check_input(char **argv)
-{
-}
-
 int	main(int argc, char **argv)
 {
+	int	i;
+
+	i = 0;
+	while (argc > 1)
+	{
+		ft_atoi(argv[1]);
+		write (1, &argv[i], 1);
+		i++;
+	}
 }

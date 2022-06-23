@@ -6,13 +6,13 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:25:18 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/06/22 13:04:12 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:24:33 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include "libft/libft.h"
 
 #endif

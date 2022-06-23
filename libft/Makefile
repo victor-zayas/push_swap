@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 12:12:22 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/06/22 16:02:00 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/06/23 12:38:26 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,11 +68,10 @@ AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 RM = /bin/rm -f
 
-all: $(NAME)
 
-$(NAME) : $(OBJ) $(INCLUDES)
-	@$(AR) $(NAME) $(OBJ)
-	@echo "\033[0;32m ༺ library created༻"
+$(NAME) : $(OBJ) $(INCLUDES) $(BONUS_OBJS)
+	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJS)
+	@echo "\033[0;34m ༺ library & bonus created༻"
 
 bonus: $(BONUS_OBJS) $(OBJ) $(INCLUDES)
 	@$(AR) $(NAME) $(BONUS_OBJS) $(OBJ)
@@ -83,6 +82,8 @@ $(OBJ) : $(SRC)
 	
 $(BONUS_OBJS) : $(BONUS)
 	@$(CC) $(CFLAGS) -c $(BONUS)
+
+all: $(NAME)
 
 clean:
 	@$(RM) $(OBJ) $(BONUS_OBJS)
