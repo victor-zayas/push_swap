@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/06/23 12:44:45 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/05 11:39:45 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,10 @@ RED=\033[0;31m
 BLUE=\033[0;34m
 END=\033[0m
 
-$(NAME) : $(OBJ) $(INCLUDE)
+$(NAME) : $(OBJ)
 	@make -C libft/
-	@$(AR) $(NAME) $(OBJ)
+	@mv libft/libft.a $(NAME)
+	@$(NAME) $(OBJ) $(INCLUDE)
 	@echo "$(GREEN)༺ library created༻$(END)"
 
 $(OBJ) : $(SRC)
