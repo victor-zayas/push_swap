@@ -6,13 +6,13 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/07/05 11:39:45 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/18 18:37:21 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-INCLUDE = libft/libft.a
+INCLUDE = libft.a
 
 SRC = push_swap.c
 
@@ -29,8 +29,8 @@ END=\033[0m
 
 $(NAME) : $(OBJ)
 	@make -C libft/
-	@mv libft/libft.a $(NAME)
-	@$(NAME) $(OBJ) $(INCLUDE)
+	@mv libft/libft.a .
+	@$(CC) $(CFLAGS) $(INCLUDE) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)༺ library created༻$(END)"
 
 $(OBJ) : $(SRC)
@@ -39,7 +39,7 @@ $(OBJ) : $(SRC)
 all: $(NAME)
 
 clean:
-	@$(RM) $(OBJ) $(BONUS_OBJS)
+	@$(RM) $(OBJ) $(BONUS_OBJS) libft.a libft/*.o
 	@echo "$(RED)༺ Objs deleted༻$(END)"
 
 fclean: clean

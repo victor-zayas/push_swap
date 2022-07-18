@@ -12,20 +12,20 @@
 
 #include"libft.h"
 
-int	ft_check(const char *str)
+int	ft_cmp(const char *str)
 {
 	if (str == NULL)
 		return (0);
 	return (1);
 }
 
-int	ft_atoi(const char *str)
+int long	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
 	int	nb;
 
-	ft_check(str);
+	ft_cmp(str);
 	i = 0;
 	sign = 1;
 	nb = 0;
