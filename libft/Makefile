@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 12:12:22 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/04/21 14:24:24 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/19 11:11:50 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,13 +70,13 @@ RM = /bin/rm -f
 
 all: $(NAME)
 
-$(NAME) : $(OBJ) $(INCLUDES)
-	@$(AR) $(NAME) $(OBJ)
-	@echo "library created"
+$(NAME) : $(OBJ) $(INCLUDES) $(BONUS_OBJS)
+	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJS)
+	@echo "\033[0;34m ༺ library & bonus created༻"
 
 bonus: $(BONUS_OBJS) $(OBJ) $(INCLUDES)
 	@$(AR) $(NAME) $(BONUS_OBJS) $(OBJ)
-	@echo "Bonus Compiled"
+	@echo "\033[0;34m ༺ Bonus Compiled༻"
 
 $(OBJ) : $(SRC)
 	@$(CC) $(CFLAGS) -c $(SRC)
@@ -84,13 +84,15 @@ $(OBJ) : $(SRC)
 $(BONUS_OBJS) : $(BONUS)
 	@$(CC) $(CFLAGS) -c $(BONUS)
 
+all: $(NAME)
+
 clean:
 	@$(RM) $(OBJ) $(BONUS_OBJS)
-	@echo "objs deleted"
+	@echo "\033[0;31m ༺ Objs deleted༻"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "executable deleted"
+	@echo "\033[0;31m ༺ Executable deleted༻"
 
 re: fclean all
 
