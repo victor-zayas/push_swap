@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/07/19 14:10:23 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/20 11:25:56 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ INCLUDE = libft.a
 
 SRC = push_swap.c \
 	  free.c \
+	  movements.c
 
 OBJ = $(SRC:.c=.o)
 

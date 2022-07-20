@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/07/20 08:19:36 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/07/20 13:52:57 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	check_dupl(t_list *stack)
 			if (aux->content == stack->content && i != j)
 			{
 				write(2, "Error\n", 6);
-				exit(0);
+				exit(1);
 			}
 			aux = aux->next;
 			j++;
@@ -78,13 +78,14 @@ int	main(int argc, char **argv)
 	i = 0;
 	stack_a = NULL;
 	if (argc == 1)
-		exit(0);
+		exit(1);
 	if (argc == 2)
 	{
 		sp_arg = ft_split(argv[1], ' ');
 		stack_a = get_stack(sp_arg);
 		ft_free(sp_arg);
 		check_dupl(stack_a);
+		swap_a(stack_a);
 		print_list(stack_a);
 		ft_free_lst(&stack_a);
 	}
@@ -92,6 +93,7 @@ int	main(int argc, char **argv)
 	{
 		stack_a = get_stack(&argv[1]);
 		check_dupl(stack_a);
+		swap_a(stack_a);
 		print_list(stack_a);
 		ft_free_lst(&stack_a);
 	}
