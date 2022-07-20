@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/07/19 11:07:15 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/19 14:10:23 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 
 INCLUDE = libft.a
 
-SRC = push_swap.c
+SRC = push_swap.c \
+	  free.c \
 
 OBJ = $(SRC:.c=.o)
 

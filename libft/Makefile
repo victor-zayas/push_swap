@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 12:12:22 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/07/19 11:11:50 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/07/19 14:18:13 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,10 +50,7 @@ SRC = ft_isalpha.c			\
 BONUS =	ft_lstadd_back_bonus.c  \
 		ft_lstadd_front_bonus.c \
 		ft_lstclear_bonus.c     \
-		ft_lstdelone_bonus.c    \
-		ft_lstiter_bonus.c      \
 		ft_lstlast_bonus.c      \
-		ft_lstmap_bonus.c       \
 		ft_lstnew_bonus.c       \
 		ft_lstsize_bonus.c
 
@@ -72,11 +69,11 @@ all: $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDES) $(BONUS_OBJS)
 	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJS)
-	@echo "\033[0;34m ༺ library & bonus created༻"
+	@echo "\033[0;34m༺ library & bonus created༻"
 
 bonus: $(BONUS_OBJS) $(OBJ) $(INCLUDES)
 	@$(AR) $(NAME) $(BONUS_OBJS) $(OBJ)
-	@echo "\033[0;34m ༺ Bonus Compiled༻"
+	@echo "\033[0;34m༺ Bonus Compiled༻"
 
 $(OBJ) : $(SRC)
 	@$(CC) $(CFLAGS) -c $(SRC)
@@ -88,11 +85,11 @@ all: $(NAME)
 
 clean:
 	@$(RM) $(OBJ) $(BONUS_OBJS)
-	@echo "\033[0;31m ༺ Objs deleted༻"
+	@echo "\033[0;31m༺ Objs deleted༻"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "\033[0;31m ༺ Executable deleted༻"
+	@echo "\033[0;31m༺ Executable deleted༻"
 
 re: fclean all
 

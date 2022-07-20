@@ -1,19 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 13:33:56 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/05/05 20:49:18 by vzayas-s         ###   ########.fr       */
+/*   Created: 2022/07/19 12:40:17 by vzayas-s          #+#    #+#             */
+/*   Updated: 2022/07/19 12:40:21 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_free_lst(t_list **lst)
 {
-	del(lst->content);
-	free(lst);
+	t_list	*aux;
+
+	while (*lst)
+	{
+		aux = (*lst)->next;
+		free(*lst);
+		*lst = aux;
+	}
+}
+
+void	ft_free(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+		free(ptr[i++]);
+	free(ptr);
 }

@@ -6,13 +6,13 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:29:57 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/05/05 20:50:23 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/07/19 12:55:39 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*list;
 

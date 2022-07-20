@@ -6,59 +6,93 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/07/18 13:47:32 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/07/20 08:19:36 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	ft_nonum(char **array)
+void	print_list(t_list *stack)
 {
-	int	i;
-	int	j;
+	while (stack)
+	{
+		printf("%d\n", stack->content);
+		stack = stack->next;
+	}
+}
+
+t_list	*get_stack(char **args)
+{
+	int		i;
+	int		aux;
+	t_list	*stack;
+	t_list	*node;
+
+	i = 0;
+	aux = 0;
+	stack = NULL;
+	while (args[i])
+	{
+		aux = ft_atoi(args[i]);
+		node = ft_lstnew(aux);
+		ft_lstadd_back(&stack, node);
+		i++;
+	}
+	return (stack);
+}
+
+void	check_dupl(t_list *stack)
+{
+	t_list	*aux;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	while (array[i][j])
+	aux = stack;
+	while (stack)
 	{
-		j = 0;
-		while (array[i][j])
+		aux = stack;
+		j = i;
+		while (aux)
 		{
-			printf("i:%dj:%darray:%c\n", i, j, array[i][j]);
-			if (!ft_isdigit(array[i][j]))
+			if (aux->content == stack->content && i != j)
 			{
-				write(1, "Error Num\n", 10);
-				exit (1);
+				write(2, "Error\n", 6);
+				exit(0);
 			}
-		j++;
+			aux = aux->next;
+			j++;
 		}
-	i++;
+		stack = stack->next;
+		i++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
+	char	**sp_arg;
+	t_list	*stack_a;
 	int		i;
-	char	**array;
-	char	c;
 
-	c = ' ';
 	i = 0;
-	if (argc > 1)
+	stack_a = NULL;
+	if (argc == 1)
+		exit(0);
+	if (argc == 2)
 	{
-		array = ft_split(argv[1], c);
-		if (array == NULL)
-			exit (1);
-		ft_nonum(array);
-		if (ft_atoi(array[i]) > INT_MAX)
-		{
-			write(1, "Error INT_MAX\n", 14);
-			exit (1);
-		}
-		while (array[i])
-		{
-			printf("%ld\n", ft_atoi(array[i]));
-			i++;
-		}
+		sp_arg = ft_split(argv[1], ' ');
+		stack_a = get_stack(sp_arg);
+		ft_free(sp_arg);
+		check_dupl(stack_a);
+		print_list(stack_a);
+		ft_free_lst(&stack_a);
+	}
+	else
+	{
+		stack_a = get_stack(&argv[1]);
+		check_dupl(stack_a);
+		print_list(stack_a);
+		ft_free_lst(&stack_a);
 	}
 }
