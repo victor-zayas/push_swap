@@ -19,25 +19,20 @@ static int	ft_cmp(const char *str)
 	return (1);
 }
 
-int long	ft_atoi(const char *str, int *error)
+int	ft_atoi(const char *str, int *error)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int		i;
+	int		sign;
+	long	nb;
 
 	ft_cmp(str);
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i + 1] == '-' || str[i + 1] == '+')
-			return (0);
 		if (str[i] == '-')
 			sign *= -1;
-		i++;
 	}
 	while (str[i])
 	{
@@ -45,5 +40,7 @@ int long	ft_atoi(const char *str, int *error)
 			*error = 1;
 		nb = (nb * 10) + (str[i++] - '0');
 	}
+	if ((nb * sign) < INT_MIN || (nb * sign) > INT_MAX)
+		*error = 1;
 	return (nb * sign);
 }
