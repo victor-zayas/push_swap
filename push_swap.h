@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:25:18 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/03 11:57:29 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:21:11 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct s_list
 }					t_list;
 
 //Utils//
-int long	ft_atoi(const char *str, int *error);
+int			ft_atoi(const char *str, int *error);
 char		**ft_split(char const *s, char c);
 t_list		*ft_lstnew(int content);
 t_list		*ft_lstlast(t_list *lst);

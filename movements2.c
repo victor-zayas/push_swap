@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:43:26 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/02 17:28:52 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:18:22 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	rrotate_mv(t_list **stack)
 	aux = *stack;
 	while (aux->next->next)
 		aux = aux->next;
-	aux->next = *stack;
+	aux->next->next = *stack;
 	*stack = (*stack)->next;
 	aux->next->next = NULL;
 }
