@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 14:27:24 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:50:56 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ t_list	*get_stack(char **args, t_control *control)
 	while (args[i])
 	{
 		aux = ft_atoi(args[i], &control->error);
-		//printf("%d\n", control->error);
 		ft_lstadd_back(&stack, ft_lstnew(aux));
 		i++;
 	}
+	init_stack(0, stack);
 	control->a_size = i;
 	return (stack);
 }
@@ -42,21 +42,7 @@ static void	push_swap(t_control *control)
 	else if (control->a_size == 5)
 		sort_five(control);
 	else
-		printf("je je je, no esta hecho <3");
-		//sort_all(control);
-}
-
-//Inicio del Index//
-static void	init_values(t_control *control)
-{
-	control->stack_a = NULL;
-	control->a_size = 0;
-	control->a_moves = 0;
-	control->stack_b = NULL;
-	control->b_size = 0;
-	control->b_moves = 0;
-	control->error = 0;
-	control->index_count = 1;
+		sort_all(control);
 }
 
 int	main(int argc, char **argv)
@@ -64,7 +50,7 @@ int	main(int argc, char **argv)
 	char		**sp_arg;
 	t_control	control;
 
-	init_values(&control);
+	init_values(0, &control);
 	if (argc == 1)
 		control.error = 3;
 	else

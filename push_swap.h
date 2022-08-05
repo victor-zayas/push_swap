@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 11:25:18 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 15:13:14 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:41:48 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,19 @@
 typedef struct s_control
 {
 	struct s_list	*stack_a;
+	struct s_list	*stack_b;
 	int				a_size;
 	int				a_moves;
-	struct s_list	*stack_b;
 	int				b_size;
-	int				b_moves;
 	int				error;
 	int				index_count;
+	int				ra;
+	int				rb;
+	int				rr;
+	int				rra;
+	int				rrb;
+	int				rrr;
+	int				total_moves;
 }					t_control;
 
 typedef struct s_list
@@ -80,10 +86,13 @@ void		sort_three(t_control *stk);
 void		sort_five(t_control *stk);
 void		sort_all(t_control *control);
 
-//count moves & optimize//
+//count moves & optimize | count.c//
 void		count_moves_b(t_control *control);
 void		count_moves_a(t_control *control);
 void		optimize_moves(t_list *stack);
-void		total_moves(t_list *stack);
+
+//start values of strructure | init_values.c//
+void		init_values(int mod, t_control *control);
+void		init_stack(int mod, t_list *stack);
 
 #endif

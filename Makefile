@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/08/03 11:54:33 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/08/05 16:45:07 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRC = push_swap.c 	\
 	  count.c		\
 	  magic_atoi.c	\
 	  magic_split.c	\
-	  list_utils.c
+	  list_utils.c	\
+	  init_values.c
 
 OBJ = $(SRC:.c=.o)
 

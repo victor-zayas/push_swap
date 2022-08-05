@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 19:14:43 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/03 11:01:32 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:37:44 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,23 +109,6 @@ void	optimize_moves(t_list *stack)
 			aux->rrb--;
 			aux->rrr++;
 		}
-		aux = aux->next;
-	}
-}
-
-void	total_moves(t_list *stack)
-{
-	t_list	*aux;
-
-	aux = stack;
-	while (aux)
-	{
-		aux->moves = aux->moves + aux->ra;
-		aux->moves = aux->moves + aux->rb;
-		aux->moves = aux->moves + aux->rr;
-		aux->moves = aux->moves + aux->rra;
-		aux->moves = aux->moves + aux->rrb;
-		aux->moves = aux->moves + aux->rrr;
 		aux = aux->next;
 	}
 }
