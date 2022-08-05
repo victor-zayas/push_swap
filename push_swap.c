@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 14:20:10 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:27:24 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*get_stack(char **args, t_control *control)
 	while (args[i])
 	{
 		aux = ft_atoi(args[i], &control->error);
+		//printf("%d\n", control->error);
 		ft_lstadd_back(&stack, ft_lstnew(aux));
 		i++;
 	}
