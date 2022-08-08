@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:08:45 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 16:45:52 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:44:36 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	init_stack(int mod, t_list *stack)
 		aux->rra = 0;
 		aux->rrb = 0;
 		aux->rrr = 0;
+		aux->moves = 0;
 		aux = aux->next;
 	}
 }

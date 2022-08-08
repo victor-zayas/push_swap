@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:43:26 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 14:29:40 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:32:59 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	rotate(t_control *control, char c)
 		rotate_mv(&control->stack_b);
 		write(1, "rr\n", 3);
 	}
+	control->total_moves++;
 }
 
 void	rrotate_mv(t_list **stack)
@@ -74,4 +75,5 @@ void	rrotate(t_control *control, char c)
 		rotate_mv(&control->stack_b);
 		write(1, "rrr\n", 4);
 	}
+	control->total_moves++;
 }

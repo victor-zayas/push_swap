@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 19:14:43 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 16:37:44 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:41:48 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,33 @@ static int	search_index(int index, t_list *stack)
 	return (i);
 }
 
+void	count_moves_a(t_control *control)
+{
+	t_list	*aux;
+	t_list	*stack;
+
+	stack = control->stack_a;
+	while (stack)
+	{
+		aux = control->stack_a;
+		while (stack->content != aux->content)
+		{
+			stack->ra++;
+			aux = aux->next;
+		}
+		if (stack->ra > (control->a_size / 2))
+		{
+			stack->ra = 0;
+			while (aux)
+			{
+				stack->rra++;
+				aux = aux->next;
+			}
+		}
+		stack = stack->next;
+	}
+}
+
 void	count_moves_b(t_control *control)
 {
 	t_list	*stack;
@@ -56,33 +83,6 @@ void	count_moves_b(t_control *control)
 			while (aux)
 			{
 				stack->rrb++;
-				aux = aux->next;
-			}
-		}
-		stack = stack->next;
-	}
-}
-
-void	count_moves_a(t_control *control)
-{
-	t_list	*aux;
-	t_list	*stack;
-
-	stack = control->stack_a;
-	while (stack)
-	{
-		aux = control->stack_a;
-		while (stack->content != aux->content)
-		{
-			stack->ra++;
-			aux = aux->next;
-		}
-		if (stack->ra > (control->a_size / 2))
-		{
-			stack->ra = 0;
-			while (aux)
-			{
-				stack->rra++;
 				aux = aux->next;
 			}
 		}

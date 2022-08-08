@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:44 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/02 17:26:17 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:33:17 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	swap(t_control *control, char c)
 		swap_mv(&control->stack_b);
 		write(1, "ss\n", 3);
 	}
+	control->total_moves++;
 }
 
 void	push(t_control *control, char c)
@@ -64,4 +65,5 @@ void	push(t_control *control, char c)
 		control->b_size++;
 		write(1, "pb\n", 3);
 	}
+	control->total_moves++;
 }

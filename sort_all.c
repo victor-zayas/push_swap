@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 19:12:25 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 16:42:27 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:15:03 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static void	movementt(t_control *control)
 	while (control->rr--)
 		rotate(control, 'r');
 	while (control->rra--)
-		rotate(control, 'a');
+		rrotate(control, 'a');
 	while (control->rrb--)
-		rotate(control, 'b');
+		rrotate(control, 'b');
 	while (control->rrr--)
-		rotate(control, 'r');
+		rrotate(control, 'r');
 }
 
 static void	refill_stack_a(t_control *control)
@@ -80,6 +80,7 @@ static void	refill_stack_a(t_control *control)
 		control->rb = 0;
 		while (aux)
 		{
+			aux = aux->next;
 			control->rrb++;
 		}
 	}
@@ -108,5 +109,6 @@ void	sort_all(t_control *control)
 		push(control, 'b');
 	}
 	init_values(1, control);
+	print_struc(control);
 	refill_stack_a(control);
 }

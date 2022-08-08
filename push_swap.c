@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 11:30:11 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/05 16:50:56 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 16:11:52 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 	check_input(&control);
 	indexsu(&control);
 	push_swap(&control);
-	print_struc(&control);
+	//print_struc(&control);
 	free_lst(&control.stack_a);
 	free_lst(&control.stack_b);
 }
