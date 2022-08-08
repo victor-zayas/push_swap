@@ -6,7 +6,7 @@
 /*   By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 12:43:26 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/08/08 15:32:59 by vzayas-s         ###   ########.fr       */
+/*   Updated: 2022/08/08 17:49:08 by vzayas-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rotate_mv(t_list **stack)
 	t_list	*aux;
 
 	aux = *stack;
-	while (aux->next)
+	while (aux->next != NULL)
 		aux = aux->next;
 	aux->next = *stack;
 	*stack = (*stack)->next;
@@ -50,7 +50,7 @@ void	rrotate_mv(t_list **stack)
 	t_list	*aux;
 
 	aux = *stack;
-	while (aux->next->next)
+	while (aux->next->next != NULL)
 		aux = aux->next;
 	aux->next->next = *stack;
 	*stack = aux->next;
@@ -66,13 +66,13 @@ void	rrotate(t_control *control, char c)
 	}
 	if (c == 'b')
 	{
-		rotate_mv(&control->stack_b);
+		rrotate_mv(&control->stack_b);
 		write(1, "rrb\n", 4);
 	}
 	if (c == 'r')
 	{
-		rotate_mv(&control->stack_a);
-		rotate_mv(&control->stack_b);
+		rrotate_mv(&control->stack_a);
+		rrotate_mv(&control->stack_b);
 		write(1, "rrr\n", 4);
 	}
 	control->total_moves++;
