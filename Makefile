@@ -6,7 +6,7 @@
 #    By: vzayas-s <vzayas-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 21:56:00 by vzayas-s          #+#    #+#              #
-#    Updated: 2022/08/05 16:45:07 by vzayas-s         ###   ########.fr        #
+#    Updated: 2022/08/09 14:20:04 by vzayas-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,17 @@ NAME = push_swap
 SRC = push_swap.c 	\
 	  movements.c 	\
 	  movements2.c \
+	  sort_sort.c	\
+	  sort_all.c	\
 	  check.c		\
+	  index.c		\
+	  init_values.c	\
+	  count.c		\
 	  free.c 		\
 	  print.c		\
-	  index.c		\
-	  sort_low_nb.c	\
-	  sort_all.c	\
-	  count.c		\
 	  magic_atoi.c	\
 	  magic_split.c	\
 	  list_utils.c	\
-	  init_values.c
 
 OBJ = $(SRC:.c=.o)
 
